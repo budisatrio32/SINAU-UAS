@@ -1,0 +1,24 @@
+inpt= ("aku suka kamu suka dia suka aku")
+listing=list(inpt.split())
+sudah=[]
+banyak=[]
+for kata in listing:
+    if kata not in sudah:
+        sudah.append(kata)
+        jumlah=listing.count(kata)
+        banyak.append(jumlah)
+semualist=list(zip(sudah,banyak))
+for i in range(len(semualist)):
+    for j in range(len(semualist)-i-1):
+        nama1,jlh1=semualist[j]
+        nama2,jlh2=semualist[j+1]
+        if jlh1<jlh2:
+            semualist[j], semualist[j+1]=semualist[j+1],semualist[j]
+        elif jlh1==jlh2:
+            if nama1>nama2:
+                semualist[j], semualist[j+1]=semualist[j+1],semualist[j]
+hasil=[]
+for al in semualist:
+    nama,jumlah=al
+    hasil.append(nama)
+print(hasil)
