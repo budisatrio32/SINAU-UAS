@@ -1,0 +1,18 @@
+out={}
+jenis=[]
+temp=[]
+
+nnn=int(input())
+for i in range(nnn):
+    kategori,nama_barang=input().split()
+    jenis.append(kategori)
+    temp.append([kategori, nama_barang])
+jenis.sort()
+for kat in jenis:
+    temp1=[]
+    for bar in temp:
+        if kat==bar[0]:
+            temp1.append(bar[1])
+    temp1.sort()
+    out[kat]=temp1
+print(out)
