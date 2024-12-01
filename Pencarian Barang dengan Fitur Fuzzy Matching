@@ -1,0 +1,18 @@
+dictionary={}
+listhas=[]
+nnn=int(input())
+for i in range(nnn):
+    nama_barang,harga=input().split()
+    dictionary[nama_barang]=int(harga)
+
+kunci=input().lower()
+for key in dictionary:
+    if kunci in key.lower():
+        listhas.append((key, dictionary[key]))
+for i in range(len(listhas)):
+    for j in range(len(listhas)-i-1):
+        nama1,harga1=listhas[j]
+        nama2,harga2=listhas[j+1]
+        if harga1>harga2:
+            listhas[j],listhas[j+1]=listhas[j+1],listhas[j]
+print(listhas)
